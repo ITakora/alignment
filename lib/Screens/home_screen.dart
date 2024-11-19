@@ -118,363 +118,421 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Alignment"),
-        centerTitle: true,
-      ),
-      body: ListView(
-        children: [
-          Row(
-            mainAxisSize: MainAxisSize.max,
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Column(
+        appBar: AppBar(
+          title: const Text("Alignment"),
+          centerTitle: true,
+        ),
+        body: ListView(
+          children: [
+            Column(
+              children: [
+                Row(
+                  mainAxisSize: MainAxisSize.max,
                   children: [
-                    const Text("A1"),
-                    Positioned(
-                      child: SizedBox(
-                        width: 90,
-                        height: 90,
-                        child: TextField(
-                          onChanged: (value) {
-                            setState(() {
-                              valueFieldTA1 = double.parse(value);
-                            });
-                          },
-                          textAlign: TextAlign.center,
-                          controller: controllerTA1,
-                          keyboardType: TextInputType.number,
-                          decoration: const InputDecoration(
-                              hintText: "T",
-                              border: OutlineInputBorder(
-                                  borderRadius:
-                                      BorderRadius.all(Radius.circular(8)))),
-                        ),
+                    Container(
+                      width: 220,
+                      height: 250,
+                      child: Stack(
+                        fit: StackFit.loose,
+                        children: [
+                          Positioned(left: 108, child: const Text("A1")),
+                          Positioned(
+                            top: 25,
+                            left: 70,
+                            child: SizedBox(
+                              width: 90,
+                              height: 90,
+                              child: TextField(
+                                onChanged: (value) {
+                                  setState(() {
+                                    valueFieldTA1 = double.parse(value);
+                                  });
+                                },
+                                textAlign: TextAlign.center,
+                                controller: controllerTA1,
+                                keyboardType: TextInputType.number,
+                                decoration: const InputDecoration(
+                                    hintText: "T",
+                                    border: OutlineInputBorder(
+                                        borderRadius: BorderRadius.all(
+                                            Radius.circular(8)))),
+                              ),
+                            ),
+                          ),
+                          Positioned(
+                            top: 105,
+                            left: 15,
+                            child: SizedBox(
+                              width: 90,
+                              height: 90,
+                              child: TextField(
+                                onChanged: (value) {
+                                  setState(() {
+                                    valueFieldRA1 = double.parse(value);
+                                  });
+                                },
+                                textAlign: TextAlign.center,
+                                controller: controllerRA1,
+                                keyboardType: TextInputType.number,
+                                decoration: const InputDecoration(
+                                    hintText: "R",
+                                    hintStyle: TextStyle(),
+                                    border: OutlineInputBorder(
+                                        borderRadius: BorderRadius.all(
+                                            Radius.circular(8)))),
+                              ),
+                            ),
+                          ),
+                          Positioned(
+                            top: 185,
+                            left: 70,
+                            child: SizedBox(
+                              width: 90,
+                              height: 90,
+                              child: TextField(
+                                onChanged: (value) {
+                                  setState(() {
+                                    valueFeildBA1 = double.parse(value);
+                                  });
+                                },
+                                textAlign: TextAlign.center,
+                                controller: controllerBA1,
+                                keyboardType: TextInputType.number,
+                                decoration: const InputDecoration(
+                                    hintText: "B",
+                                    border: OutlineInputBorder(
+                                        borderRadius: BorderRadius.all(
+                                            Radius.circular(8)))),
+                              ),
+                            ),
+                          ),
+                          Positioned(
+                            top: 105,
+                            left: 130,
+                            child: SizedBox(
+                              width: 90,
+                              height: 90,
+                              child: TextField(
+                                onChanged: (value) {
+                                  setState(() {
+                                    valueFieldLA1 = double.parse(value);
+                                  });
+                                },
+                                textAlign: TextAlign.center,
+                                controller: controllerLA1,
+                                keyboardType: TextInputType.number,
+                                decoration: const InputDecoration(
+                                    hintText: "L",
+                                    border: OutlineInputBorder(
+                                        borderRadius: BorderRadius.all(
+                                            Radius.circular(8)))),
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
                     ),
-                    SizedBox(
-                      width: 90,
-                      height: 90,
-                      child: TextField(
-                        onChanged: (value) {
-                          setState(() {
-                            valueFieldRA1 = double.parse(value);
-                          });
-                        },
-                        textAlign: TextAlign.center,
-                        controller: controllerRA1,
-                        keyboardType: TextInputType.number,
-                        decoration: const InputDecoration(
-                            hintText: "R",
-                            hintStyle: TextStyle(),
-                            border: OutlineInputBorder(
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(8)))),
-                      ),
-                    ),
-                    SizedBox(
-                      width: 90,
-                      height: 90,
-                      child: TextField(
-                        onChanged: (value) {
-                          setState(() {
-                            valueFeildBA1 = double.parse(value);
-                          });
-                        },
-                        textAlign: TextAlign.center,
-                        controller: controllerBA1,
-                        keyboardType: TextInputType.number,
-                        decoration: const InputDecoration(
-                            hintText: "B",
-                            border: OutlineInputBorder(
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(8)))),
-                      ),
-                    ),
-                    SizedBox(
-                      width: 90,
-                      height: 90,
-                      child: TextField(
-                        onChanged: (value) {
-                          setState(() {
-                            valueFieldLA1 = double.parse(value);
-                          });
-                        },
-                        textAlign: TextAlign.center,
-                        controller: controllerLA1,
-                        keyboardType: TextInputType.number,
-                        decoration: const InputDecoration(
-                            hintText: "L",
-                            border: OutlineInputBorder(
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(8)))),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
 
-              ///
-              ///
-              /// R
-              ///
-              ///
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Column(
-                  children: [
-                    const Text("R"),
-                    SizedBox(
-                      width: 90,
-                      height: 90,
-                      child: TextField(
-                        onChanged: (value) {
-                          setState(() {
-                            valueFieldTR = double.parse(value);
-                          });
-                        },
-                        textAlign: TextAlign.center,
-                        controller: controllerTR,
-                        keyboardType: TextInputType.number,
-                        decoration: const InputDecoration(
-                            hintText: "T",
-                            border: OutlineInputBorder(
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(8)))),
+                    ///
+                    ///
+                    /// R
+                    ///
+                    ///
+                    Container(
+                      width: 270,
+                      height: 250,
+                      child: Stack(
+                        children: [
+                          Positioned(left: 140, child: const Text("R")),
+                          Positioned(
+                            top: 25,
+                            left: 100,
+                            child: SizedBox(
+                              width: 90,
+                              height: 90,
+                              child: TextField(
+                                onChanged: (value) {
+                                  setState(() {
+                                    valueFieldTR = double.parse(value);
+                                  });
+                                },
+                                textAlign: TextAlign.center,
+                                controller: controllerTR,
+                                keyboardType: TextInputType.number,
+                                decoration: const InputDecoration(
+                                    hintText: "T",
+                                    border: OutlineInputBorder(
+                                        borderRadius: BorderRadius.all(
+                                            Radius.circular(8)))),
+                              ),
+                            ),
+                          ),
+                          Positioned(
+                            top: 105,
+                            left: 35,
+                            child: SizedBox(
+                              width: 90,
+                              height: 90,
+                              child: TextField(
+                                onChanged: (value) {
+                                  setState(() {
+                                    valueFieldRR = double.parse(value);
+                                  });
+                                },
+                                textAlign: TextAlign.center,
+                                controller: controllerRR,
+                                keyboardType: TextInputType.number,
+                                decoration: const InputDecoration(
+                                    hintText: "R",
+                                    hintStyle: TextStyle(),
+                                    border: OutlineInputBorder(
+                                        borderRadius: BorderRadius.all(
+                                            Radius.circular(8)))),
+                              ),
+                            ),
+                          ),
+                          Positioned(
+                            top: 180,
+                            left: 100,
+                            child: SizedBox(
+                              width: 90,
+                              height: 90,
+                              child: TextField(
+                                onChanged: (value) {
+                                  setState(() {
+                                    valueFeildBR = double.parse(value);
+                                  });
+                                },
+                                textAlign: TextAlign.center,
+                                controller: controllerBR,
+                                keyboardType: TextInputType.number,
+                                decoration: const InputDecoration(
+                                    hintText: "B",
+                                    border: OutlineInputBorder(
+                                        borderRadius: BorderRadius.all(
+                                            Radius.circular(8)))),
+                              ),
+                            ),
+                          ),
+                          Positioned(
+                            top: 105,
+                            left: 160,
+                            child: SizedBox(
+                              width: 90,
+                              height: 90,
+                              child: TextField(
+                                onChanged: (value) {
+                                  setState(() {
+                                    valueFieldLR = double.parse(value);
+                                  });
+                                },
+                                textAlign: TextAlign.center,
+                                controller: controllerLR,
+                                keyboardType: TextInputType.number,
+                                decoration: const InputDecoration(
+                                    hintText: "L",
+                                    border: OutlineInputBorder(
+                                        borderRadius: BorderRadius.all(
+                                            Radius.circular(8)))),
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
                     ),
-                    SizedBox(
-                      width: 90,
-                      height: 90,
-                      child: TextField(
-                        onChanged: (value) {
-                          setState(() {
-                            valueFieldRR = double.parse(value);
-                          });
-                        },
-                        textAlign: TextAlign.center,
-                        controller: controllerRR,
-                        keyboardType: TextInputType.number,
-                        decoration: const InputDecoration(
-                            hintText: "R",
-                            hintStyle: TextStyle(),
-                            border: OutlineInputBorder(
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(8)))),
-                      ),
-                    ),
-                    SizedBox(
-                      width: 90,
-                      height: 90,
-                      child: TextField(
-                        onChanged: (value) {
-                          setState(() {
-                            valueFeildBR = double.parse(value);
-                          });
-                        },
-                        textAlign: TextAlign.center,
-                        controller: controllerBR,
-                        keyboardType: TextInputType.number,
-                        decoration: const InputDecoration(
-                            hintText: "B",
-                            border: OutlineInputBorder(
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(8)))),
-                      ),
-                    ),
-                    SizedBox(
-                      width: 90,
-                      height: 90,
-                      child: TextField(
-                        onChanged: (value) {
-                          setState(() {
-                            valueFieldLR = double.parse(value);
-                          });
-                        },
-                        textAlign: TextAlign.center,
-                        controller: controllerLR,
-                        keyboardType: TextInputType.number,
-                        decoration: const InputDecoration(
-                            hintText: "L",
-                            border: OutlineInputBorder(
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(8)))),
+
+                    ///
+                    ////
+                    ///
+                    ///A2
+                    ///
+                    ///
+                    Container(
+                      width: 230,
+                      height: 250,
+                      child: Stack(
+                        children: [
+                          Positioned(left: 108, child: const Text("A2")),
+                          Positioned(
+                            top: 25,
+                            left: 70,
+                            child: SizedBox(
+                              width: 90,
+                              height: 90,
+                              child: TextField(
+                                onChanged: (value) {
+                                  setState(() {
+                                    valueFieldTA2 = double.parse(value);
+                                  });
+                                },
+                                textAlign: TextAlign.center,
+                                controller: controllerTA2,
+                                keyboardType: TextInputType.number,
+                                decoration: const InputDecoration(
+                                    hintText: "T",
+                                    border: OutlineInputBorder(
+                                        borderRadius: BorderRadius.all(
+                                            Radius.circular(8)))),
+                              ),
+                            ),
+                          ),
+                          Positioned(
+                            top: 105,
+                            left: 10,
+                            child: SizedBox(
+                              width: 90,
+                              height: 90,
+                              child: TextField(
+                                onChanged: (value) {
+                                  setState(() {
+                                    valueFieldRA2 = double.parse(value);
+                                  });
+                                },
+                                textAlign: TextAlign.center,
+                                controller: controllerRA2,
+                                keyboardType: TextInputType.number,
+                                decoration: const InputDecoration(
+                                    hintText: "R",
+                                    hintStyle: TextStyle(),
+                                    border: OutlineInputBorder(
+                                        borderRadius: BorderRadius.all(
+                                            Radius.circular(8)))),
+                              ),
+                            ),
+                          ),
+                          Positioned(
+                            top: 180,
+                            left: 70,
+                            child: SizedBox(
+                              width: 90,
+                              height: 90,
+                              child: TextField(
+                                onChanged: (value) {
+                                  setState(() {
+                                    valueFeildBA2 = double.parse(value);
+                                  });
+                                },
+                                textAlign: TextAlign.center,
+                                controller: controllerBA2,
+                                keyboardType: TextInputType.number,
+                                decoration: const InputDecoration(
+                                    hintText: "B",
+                                    border: OutlineInputBorder(
+                                        borderRadius: BorderRadius.all(
+                                            Radius.circular(8)))),
+                              ),
+                            ),
+                          ),
+                          Positioned(
+                            top: 105,
+                            left: 140,
+                            child: SizedBox(
+                              width: 90,
+                              height: 90,
+                              child: TextField(
+                                onChanged: (value) {
+                                  setState(() {
+                                    valueFieldLA2 = double.parse(value);
+                                  });
+                                },
+                                textAlign: TextAlign.center,
+                                controller: controllerLA2,
+                                keyboardType: TextInputType.number,
+                                decoration: const InputDecoration(
+                                    hintText: "L",
+                                    border: OutlineInputBorder(
+                                        borderRadius: BorderRadius.all(
+                                            Radius.circular(8)))),
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                   ],
                 ),
-              ), //
-              ///
-              ////
-              ///
-              ///A2
-              ///
-              ///
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Column(
+                SizedBox(
+                  height: 20,
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 10),
+                  child: TextField(
+                    onChanged: (value) {
+                      setState(() {
+                        distance = double.parse(value);
+                      });
+                    },
+                    controller: controllerDistance,
+                    keyboardType: TextInputType.number,
+                    decoration: const InputDecoration(
+                        hintText: "Distance",
+                        border: OutlineInputBorder(
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(8)))),
+                  ),
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const Text("A2"),
-                    SizedBox(
-                      width: 90,
-                      height: 90,
-                      child: TextField(
-                        onChanged: (value) {
-                          setState(() {
-                            valueFieldTA2 = double.parse(value);
-                          });
+                    ElevatedButton(
+                        onPressed: () {
+                          totalAxial();
+                          simPLateAxial();
                         },
-                        textAlign: TextAlign.center,
-                        controller: controllerTA2,
-                        keyboardType: TextInputType.number,
-                        decoration: const InputDecoration(
-                            hintText: "T",
-                            border: OutlineInputBorder(
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(8)))),
-                      ),
-                    ),
-                    SizedBox(
-                      width: 90,
-                      height: 90,
-                      child: TextField(
-                        onChanged: (value) {
-                          setState(() {
-                            valueFieldRA2 = double.parse(value);
-                          });
-                        },
-                        textAlign: TextAlign.center,
-                        controller: controllerRA2,
-                        keyboardType: TextInputType.number,
-                        decoration: const InputDecoration(
-                            hintText: "R",
-                            hintStyle: TextStyle(),
-                            border: OutlineInputBorder(
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(8)))),
-                      ),
-                    ),
-                    SizedBox(
-                      width: 90,
-                      height: 90,
-                      child: TextField(
-                        onChanged: (value) {
-                          setState(() {
-                            valueFeildBA2 = double.parse(value);
-                          });
-                        },
-                        textAlign: TextAlign.center,
-                        controller: controllerBA2,
-                        keyboardType: TextInputType.number,
-                        decoration: const InputDecoration(
-                            hintText: "B",
-                            border: OutlineInputBorder(
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(8)))),
-                      ),
-                    ),
-                    SizedBox(
-                      width: 90,
-                      height: 90,
-                      child: TextField(
-                        onChanged: (value) {
-                          setState(() {
-                            valueFieldLA2 = double.parse(value);
-                          });
-                        },
-                        textAlign: TextAlign.center,
-                        controller: controllerLA2,
-                        keyboardType: TextInputType.number,
-                        decoration: const InputDecoration(
-                            hintText: "L",
-                            border: OutlineInputBorder(
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(8)))),
-                      ),
-                    ),
+                        child: const Text("Total")),
+                    ElevatedButton(
+                        onPressed: _onTapClear, child: const Text("Clear")),
                   ],
                 ),
-              )
-            ],
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10),
-            child: TextField(
-              onChanged: (value) {
-                setState(() {
-                  distance = double.parse(value);
-                });
-              },
-              controller: controllerDistance,
-              keyboardType: TextInputType.number,
-              decoration: const InputDecoration(
-                  hintText: "Distance",
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(8)))),
-            ),
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              ElevatedButton(
-                  onPressed: () {
-                    totalAxial();
-                    simPLateAxial();
-                  },
-                  child: const Text("Total")),
-              ElevatedButton(
-                  onPressed: _onTapClear, child: const Text("Clear")),
-            ],
-          ),
-          const SizedBox(height: 20),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              simPlateHorizontalAxial == 0
-                  ? const Text("")
-                  : Text(
-                      "Simplate Horzontal : ${simPlateHorizontalAxial.toString()}",
-                      style: const TextStyle(
-                          fontWeight: FontWeight.bold, fontSize: 16),
-                    ),
-              simPlateVerticalAxial == 0
-                  ? const Text("")
-                  : Text(
-                      "Simplate Vertical : ${simPlateVerticalAxial.toString()}",
-                      style: const TextStyle(
-                          fontWeight: FontWeight.bold, fontSize: 16),
-                    ),
-              simPlateHorizontalRadial == 0
-                  ? const Text("")
-                  : Text(
-                      "Simplate Horizontal Radial : ${simPlateHorizontalRadial.toString()}",
-                      style: const TextStyle(
-                          fontWeight: FontWeight.bold, fontSize: 16),
-                    ),
-              simPlateVerticalRadial == 0
-                  ? const Text("")
-                  : Text(
-                      "Simplate Vertical Radial : ${simPlateVerticalRadial.toString()}",
-                      style: const TextStyle(
-                          fontWeight: FontWeight.bold, fontSize: 16),
-                    ),
-            ],
-          )
-          // totalAxialT == 0
-          //     ? const Text("")
-          //     : Text("Total Axial T : ${totalAxialT.toString()}"),
-          // totalAxialB == 0
-          //     ? const Text("")
-          //     : Text("Total Axial B : ${totalAxialB.toString()}"),
-          // totalAxialR == 0
-          //     ? const Text("")
-          //     : Text("Total Axial R : ${totalAxialR.toString()}"),
-          // totalAxialL == 0
-          //     ? const Text("")
-          //     : Text("Total Axial L : ${totalAxialL.toString()}"),
-        ],
-      ),
-    );
+                const SizedBox(height: 20),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    simPlateHorizontalAxial == 0
+                        ? const Text("")
+                        : Text(
+                            "Simplate Horzontal : ${simPlateHorizontalAxial.toString()}",
+                            style: const TextStyle(
+                                fontWeight: FontWeight.bold, fontSize: 16),
+                          ),
+                    simPlateVerticalAxial == 0
+                        ? const Text("")
+                        : Text(
+                            "Simplate Vertical : ${simPlateVerticalAxial.toString()}",
+                            style: const TextStyle(
+                                fontWeight: FontWeight.bold, fontSize: 16),
+                          ),
+                    simPlateHorizontalRadial == 0
+                        ? const Text("")
+                        : Text(
+                            "Simplate Horizontal Radial : ${simPlateHorizontalRadial.toString()}",
+                            style: const TextStyle(
+                                fontWeight: FontWeight.bold, fontSize: 16),
+                          ),
+                    simPlateVerticalRadial == 0
+                        ? const Text("")
+                        : Text(
+                            "Simplate Vertical Radial : ${simPlateVerticalRadial.toString()}",
+                            style: const TextStyle(
+                                fontWeight: FontWeight.bold, fontSize: 16),
+                          ),
+                  ],
+                ),
+                totalAxialT == 0
+                    ? const Text("")
+                    : Text("Total Axial T : ${totalAxialT.toString()}"),
+                totalAxialB == 0
+                    ? const Text("")
+                    : Text("Total Axial B : ${totalAxialB.toString()}"),
+                totalAxialR == 0
+                    ? const Text("")
+                    : Text("Total Axial R : ${totalAxialR.toString()}"),
+                totalAxialL == 0
+                    ? const Text("")
+                    : Text("Total Axial L : ${totalAxialL.toString()}"),
+              ],
+            )
+          ],
+        ));
   }
 }
